@@ -9,13 +9,13 @@
 <body>
 <div class="container">
     <div class="form">
-
         <div class="group">
             <div class="input-group">
-<!--                <label for="idInstance">idInstance:</label>-->
-                <input type="text" id="idInstance" placeholder="idInstance">
-<!--                <label for="apiTokenInstance">ApiTokenInstance:</label>-->
-                <input type="text" id="apiTokenInstance" placeholder="ApiTokenInstance">
+                <input type="text" id="idInstance" placeholder="Enter idInstance">
+                <span class="error-message" id="idInstance-error"></span>
+
+                <input type="text" id="apiTokenInstance" placeholder="Enter ApiTokenInstance">
+                <span class="error-message" id="apiTokenInstance-error"></span>
             </div>
         </div>
 
@@ -28,13 +28,21 @@
 
         <div class="group">
             <input type="text" id="phoneNumber" placeholder="77771234567">
-            <input type="text" id="message" placeholder="hello world!">
+            <span class="error-message" id="phoneNumber-error"></span>
+
+            <input type="text" id="message" placeholder="Hello World!">
+            <span class="error-message" id="message-error"></span>
+
             <button id="sendMessage" onclick="sendMessage()">sendMessage</button>
         </div>
 
         <div class="group">
-            <input type="text" id="phoneNumberForFile" placeholder="77771234567">
+            <input type="text" id="phoneNumberToSendFile" placeholder="77771234567">
+            <span class="error-message" id="phoneNumberToSendFile-error"></span>
+
             <input type="text" id="fileUrl" placeholder="https://example.com/file.png">
+            <span class="error-message" id="fileUrl-error"></span>
+
             <button onclick="sendFileByUrl()">sendFileByUrl</button>
         </div>
     </div>

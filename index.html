@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green API Demo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-        }
-
-        .form {
-            width: 30%;
-        }
-
-        .form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form input, .form button {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .form input {
-            border: 1px solid #ccc;
-        }
-
-        .form input#idInstance,
-        .form input#apiTokenInstance {
-            margin-bottom: 5px;
-        }
-
-        .form button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .form button:hover {
-            background-color: #45a049;
-        }
-
-        .form input#phoneNumber,
-        .form input#message,
-        .form button#sendMessage {
-            margin-bottom: 5px;
-        }
-
-        .response {
-            width: 65%;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .response pre {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 4px;
-            white-space: pre-wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
@@ -114,56 +40,6 @@
         <pre id="response"></pre>
     </div>
 </div>
-    <script>
-        const baseUrl = 'https://api.green-api.com/';
-
-        async function getSettings() {
-            const idInstance = document.getElementById('idInstance').value;
-            const apiToken = document.getElementById('apiTokenInstance').value;
-            console.log(idInstance + ", " + apiToken)
-            const response = await fetch(`${baseUrl}/waInstance${idInstance}/getSettings/${apiToken}`);
-            const data = await response.json();
-            document.getElementById('response').value = JSON.stringify(data, null, 2);
-        }
-
-        async function getStateInstance() {
-            const idInstance = document.getElementById('idInstance').value;
-            const apiToken = document.getElementById('apiTokenInstance').value;
-            const response = await fetch(`${baseUrl}/waInstance${idInstance}/getStateInstance/${apiToken}`);
-            const data = await response.json();
-            document.getElementById('response').value = JSON.stringify(data, null, 2);
-        }
-
-        async function sendMessage() {
-            const idInstance = document.getElementById('idInstance').value;
-            const apiToken = document.getElementById('apiTokenInstance').value;
-            const phone = document.getElementById('phoneNumber').value;
-            const message = document.getElementById('message').value;
-
-            const response = await fetch(`${baseUrl}/waInstance${idInstance}/sendMessage/${apiToken}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chatId: `${phone}@c.us`, message })
-            });
-            const data = await response.json();
-            document.getElementById('response').value = JSON.stringify(data, null, 2);
-        }
-
-        async function sendFileByUrl() {
-            const idInstance = document.getElementById('idInstance').value;
-            const apiToken = document.getElementById('apiTokenInstance').value;
-            const phone = document.getElementById('phoneNumber').value;
-            const fileUrl = document.getElementById('fileUrl').value;
-
-            const response = await fetch(`${baseUrl}/waInstance${idInstance}/sendFileByUrl/${apiToken}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chatId: `${phone}@c.us`, urlFile: fileUrl, fileName: 'file.png' })
-            });
-            const data = await response.json();
-            document.getElementById('response').value = JSON.stringify(data, null, 2);
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
-

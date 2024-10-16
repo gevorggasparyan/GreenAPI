@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.form {
+    width: 30%;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form input, .form button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.form input {
+    border: 1px solid #ccc;
+}
+
+.form input#idInstance,
+.form input#apiTokenInstance {
+    margin-bottom: 5px;
+}
+
+.form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form button:hover {
+    background-color: #45a049;
+}
+
+.form input#phoneNumber,
+.form input#message,
+.form button#sendMessage {
+    margin-bottom: 5px;
+}
+
+.response {
+    width: 65%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.response pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}

@@ -28,6 +28,7 @@ body {
     padding: 8px;
     margin-bottom: 20px;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .form input {
@@ -45,16 +46,12 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form button:hover {
     background-color: #45a049;
-}
-
-.form input#phoneNumber,
-.form input#message,
-.form button#sendMessage {
-    margin-bottom: 5px;
 }
 
 .response {

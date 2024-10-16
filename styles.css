@@ -17,6 +17,10 @@ body {
     width: 30%;
 }
 
+.group {
+    margin-bottom: 20px;
+}
+
 .form label {
     display: block;
     margin-bottom: 5px;
@@ -26,18 +30,13 @@ body {
 .form input, .form button {
     width: 100%;
     padding: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .form input {
     border: 1px solid #ccc;
-}
-
-.form input#idInstance,
-.form input#apiTokenInstance {
-    margin-bottom: 5px;
 }
 
 .form button {
@@ -52,6 +51,12 @@ body {
 
 .form button:hover {
     background-color: #45a049;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .response {

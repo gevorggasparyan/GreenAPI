@@ -9,30 +9,34 @@
 <body>
 <div class="container">
     <div class="form">
-        <div class="input-group">
-            <label for="idInstance">idInstance:</label>
-            <input type="text" id="idInstance" placeholder="Enter idInstance">
-            <label for="apiTokenInstance">ApiTokenInstance:</label>
-            <input type="text" id="apiTokenInstance" placeholder="Enter ApiTokenInstance">
+
+        <div class="group">
+            <div class="input-group">
+<!--                <label for="idInstance">idInstance:</label>-->
+                <input type="text" id="idInstance" placeholder="idInstance">
+<!--                <label for="apiTokenInstance">ApiTokenInstance:</label>-->
+                <input type="text" id="apiTokenInstance" placeholder="ApiTokenInstance">
+            </div>
         </div>
 
-        <div class="button-group">
-            <button onclick="getSettings()">getSettings</button>
-            <button onclick="getStateInstance()">getStateInstance</button>
+        <div class="group">
+            <div class="button-group">
+                <button onclick="getSettings()">getSettings</button>
+                <button onclick="getStateInstance()">getStateInstance</button>
+            </div>
         </div>
 
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="text" id="phoneNumber" placeholder="77771234567">
+        <div class="group">
+            <input type="text" id="phoneNumber" placeholder="77771234567">
+            <input type="text" id="message" placeholder="hello world!">
+            <button id="sendMessage" onclick="sendMessage()">sendMessage</button>
+        </div>
 
-        <label for="message">Message:</label>
-        <input type="text" id="message" placeholder="hello world!">
-
-        <button id="sendMessage" onclick="sendMessage()">sendMessage</button>
-
-        <label for="fileUrl">File URL:</label>
-        <input type="text" id="fileUrl" placeholder="https://example.com/file.png">
-
-        <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        <div class="group">
+            <input type="text" id="phoneNumberForFile" placeholder="77771234567">
+            <input type="text" id="fileUrl" placeholder="https://example.com/file.png">
+            <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        </div>
     </div>
 
     <div class="response">

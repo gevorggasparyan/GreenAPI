@@ -35,7 +35,7 @@ async function sendMessage() {
 async function sendFileByUrl() {
     const idInstance = document.getElementById('idInstance').value;
     const apiToken = document.getElementById('apiTokenInstance').value;
-    const phone = document.getElementById('phoneNumber').value;
+    const phone = document.getElementById('phoneNumberForFile').value;
     const fileUrl = document.getElementById('fileUrl').value;
 
     const response = await fetch(`${baseUrl}/waInstance${idInstance}/sendFileByUrl/${apiToken}`, {

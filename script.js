@@ -1,4 +1,4 @@
-const baseUrl = 'https://api.green-api.com/';
+const baseUrl = 'https://7103.api.greenapi.com';
 
 async function getSettings() {
     const idInstance = document.getElementById('idInstance').value;
